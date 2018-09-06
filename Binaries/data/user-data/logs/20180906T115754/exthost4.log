@@ -1,0 +1,26 @@
+[2018-09-06 11:57:59.174] [exthost4] [info] extension host started
+[2018-09-06 11:57:59.239] [exthost4] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"activationEvent":"*"}
+[2018-09-06 11:57:59.239] [exthost4] [info] ExtensionService#loadCommonJSModule h:\Visual Studio Code\Binaries\resources\app\extensions\debug-auto-launch\out\extension
+[2018-09-06 11:57:59.278] [exthost4] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2018-09-06 11:57:59.278] [exthost4] [info] ExtensionService#loadCommonJSModule h:\Visual Studio Code\Binaries\resources\app\extensions\emmet\dist\extension
+[2018-09-06 11:57:59.317] [exthost4] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2018-09-06 11:57:59.317] [exthost4] [info] ExtensionService#loadCommonJSModule h:\Visual Studio Code\Binaries\resources\app\extensions\git\dist\main
+[2018-09-06 11:58:00.284] [exthost4] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2018-09-06 11:58:00.285] [exthost4] [info] ExtensionService#loadCommonJSModule h:\Visual Studio Code\Binaries\resources\app\extensions\merge-conflict\out\extension
+[2018-09-06 11:58:00.402] [exthost4] [info] ExtensionService#_doActivateExtension vscode.search-rg {"startup":true,"activationEvent":"*"}
+[2018-09-06 11:58:00.402] [exthost4] [info] ExtensionService#loadCommonJSModule h:\Visual Studio Code\Binaries\resources\app\extensions\search-rg\out\extension
+[2018-09-06 11:58:00.463] [exthost4] [info] ExtensionService#_doActivateExtension ms-vsliveshare.vsliveshare {"startup":true,"activationEvent":"*"}
+[2018-09-06 11:58:00.463] [exthost4] [info] ExtensionService#loadCommonJSModule H:\Visual Studio Code\Binaries\data\extensions\ms-vsliveshare.vsliveshare-0.3.623\out\src\extension
+[2018-09-06 11:58:07.095] [exthost4] [info] ExtensionService#_doActivateExtension ritwickdey.LiveServer {"startup":true,"activationEvent":"*"}
+[2018-09-06 11:58:07.095] [exthost4] [info] ExtensionService#loadCommonJSModule H:\Visual Studio Code\Binaries\data\extensions\ritwickdey.liveserver-5.1.1\out\src\extension
+[2018-09-06 11:58:10.168] [exthost4] [info] ExtensionService#_doActivateExtension streetsidesoftware.code-spell-checker {"startup":true,"activationEvent":"*"}
+[2018-09-06 11:58:10.168] [exthost4] [info] ExtensionService#loadCommonJSModule H:\Visual Studio Code\Binaries\data\extensions\streetsidesoftware.code-spell-checker-1.6.10\out\src\extension
+[2018-09-06 11:58:11.606] [exthost4] [info] eager extensions activated
+[2018-09-06 11:58:20.348] [exthost4] [info] ExtensionService#_doActivateExtension vscode.configuration-editing {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2018-09-06 11:58:20.348] [exthost4] [info] ExtensionService#loadCommonJSModule h:\Visual Studio Code\Binaries\resources\app\extensions\configuration-editing\out\extension
+[2018-09-06 11:58:20.434] [exthost4] [info] ExtensionService#_doActivateExtension vscode.json-language-features {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2018-09-06 11:58:20.434] [exthost4] [info] ExtensionService#loadCommonJSModule h:\Visual Studio Code\Binaries\resources\app\extensions\json-language-features\client\dist\jsonMain
+[2018-09-06 11:58:21.162] [exthost4] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2018-09-06 11:58:21.162] [exthost4] [info] ExtensionService#loadCommonJSModule h:\Visual Studio Code\Binaries\resources\app\extensions\typescript-language-features\dist\extension
+[2018-09-06 11:58:23.319] [exthost4] [info] ExtensionService#_doActivateExtension vscode.html-language-features {"startup":false,"activationEvent":"onLanguage:html"}
+[2018-09-06 11:58:23.319] [exthost4] [info] ExtensionService#loadCommonJSModule h:\Visual Studio Code\Binaries\resources\app\extensions\html-language-features\client\dist\htmlMain
