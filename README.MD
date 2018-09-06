@@ -1,7 +1,7 @@
 # Getting Started
 1. Clone this respository into a location that will not be wiped using command prompt. Swinburne Example:
 ```
-H:\
+H:
 git clone https://github.com/LachlanVelden/Portable_VSCode.git
 ```
 2. Run by clicking on the "Start VSCode.bat". This will automaticly update the portable instance and then open it.
