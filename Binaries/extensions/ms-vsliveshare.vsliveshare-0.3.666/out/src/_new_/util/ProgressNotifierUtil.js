@@ -1,0 +1,64 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const vscode = require("vscode");
+const semver = require("semver");
+const sessionTypes_1 = require("../../sessionTypes");
+/**
+ * Provider that manages progress notifier in the context of a
+ * command.
+ */
+class ProgressNotifierUtil {
+    constructor(sessionContext, notificationUtil, contextUtil, trace) {
+        this.sessionContext = sessionContext;
+        this.notificationUtil = notificationUtil;
+        this.contextUtil = contextUtil;
+        this.trace = trace;
+    }
+    async create(options, task) {
+        const index = ProgressNotifierUtil.correlationIndex++;
+        this.trace.info(`Progress notifier opened: ${index}.`);
+        const location = semver.gte(semver.coerce(vscode.version), '1.22.0')
+            ? vscode.ProgressLocation.Notification
+            : vscode.ProgressLocation.Window;
+        return await this.notificationUtil.withProgress({ title: options.title, cancellable: true, location }, async (progress, progressUIcancellationToken) => {
+            const stateCallback = (newState, previousState) => {
+                const message = this.generateMessage(sessionTypes_1.SessionState[newState]);
+                progress.report({ message });
+            };
+            const statusCallback = (newStatus, previousStatus) => {
+                const message = this.generateMessage(newStatus);
+                progress.report({ message });
+            };
+            this.sessionContext.addListener(sessionTypes_1.SessionEvents.StateChanged, stateCallback);
+            this.sessionContext.addListener(sessionTypes_1.SessionEvents.StatusChanged, statusCallback);
+            const unsubscribe = () => {
+                this.sessionContext.removeListener(sessionTypes_1.SessionEvents.StateChanged, stateCallback);
+                this.sessionContext.removeListener(sessionTypes_1.SessionEvents.StateChanged, statusCallback);
+            };
+            if (progressUIcancellationToken) {
+                progressUIcancellationToken.onCancellationRequested(() => {
+                    this.trace.info(`Progress notifier cancelled: ${index}.`);
+                    unsubscribe();
+                });
+            }
+            const result = await task(progressUIcancellationToken);
+            this.trace.info(`Progress notifier finished: ${index}.`);
+            unsubscribe();
+            return result;
+        });
+    }
+    generateMessage(status) {
+        if (status === sessionTypes_1.SessionState[sessionTypes_1.SessionState.ExternallySigningIn]) {
+            return `Sign-in to proceed.`;
+        }
+        return status ? this.contextUtil.scrubPrefix(status)
+            .match(ProgressNotifierUtil.statusTextGeneratorRegex)
+            .slice(0, -1)
+            .join(' ') : status;
+    }
+}
+ProgressNotifierUtil.statusTextGeneratorRegex = /([A-Z]?[^A-Z]*)/g;
+ProgressNotifierUtil.correlationIndex = 0;
+exports.ProgressNotifierUtil = ProgressNotifierUtil;
+
+//# sourceMappingURL=ProgressNotifierUtil.js.map
