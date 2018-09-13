@@ -1,9 +1,9 @@
 @ECHO OFF
 SET _openPath=%0
-SET _drive=%_test:~1,2%
-IF "%_prefix%"=="H:" GOTO OnHDrive
-IF "%_prefix%"=="C:" GOTO OnCDrive
-IF "%_prefix%"=="T:" GOTO OnTDrive
+SET _drive=%_openPath:~1,2%
+IF "%_drive%"=="H:" GOTO OnHDrive
+IF "%_drive%"=="C:" GOTO OnCDrive
+IF "%_drive%"=="T:" GOTO OnTDrive
 
 :OnHDrive
 echo Opening from H Drive... Using data directory H:/.vscode
